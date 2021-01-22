@@ -1,4 +1,5 @@
-// 1. O(n) Linear
+// 1. O(n) Linear Time
+// O(1) Constant Space
 
 function logUpTo(n) {
     for (var i = 1; i <= n; i++) {
@@ -6,7 +7,8 @@ function logUpTo(n) {
     }
 }
 
-// 2. O(1) Constant
+// 2. O(n) Linear Time
+// O(1) Constant Space
 
 function logAtMost10(n) {
     for (var i = 1; i <= Math.min(n, 10); i++) {
@@ -14,7 +16,8 @@ function logAtMost10(n) {
     }
 }
 
-// 3. O(1) Constant
+// 3. O(n) Time
+// O(1) Constant Space
 
 function logAtLeast10(n) {
     for (var i = 1; i <= Math.max(n, 10); i++) {
@@ -22,7 +25,8 @@ function logAtLeast10(n) {
     }
 }
 
-// 4. O(nlogn) linear log - ends up less than n
+// 4. O(n) Linear Time
+// O(n) Linear Space - conditional inside the ofr loop
 
 function onlyElementsAtEvenIndex(array) {
     var newArray = Array(Math.ceil(array.length / 2));
@@ -34,7 +38,8 @@ function onlyElementsAtEvenIndex(array) {
     return newArray;
 }
 
-// 5. O(n^2) - Runs a set of iterations up to n at each iteration of n
+// 5. O(n^2) Quadratic Time - Runs a set of iterations up to n at each iteration of n
+// O(n) Space
 
 function subtotals(array) {
     var subtotalArray = Array(array.length);
