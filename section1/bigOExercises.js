@@ -14,7 +14,7 @@ function logAtMost10(n) {
     }
 }
 
-// 3. O(n) Constant
+// 3. O(1) Constant
 
 function logAtLeast10(n) {
     for (var i = 1; i <= Math.max(n, 10); i++) {
@@ -22,7 +22,7 @@ function logAtLeast10(n) {
     }
 }
 
-// 4. O(logn) linear log - ends up less than n
+// 4. O(nlogn) linear log - ends up less than n
 
 function onlyElementsAtEvenIndex(array) {
     var newArray = Array(Math.ceil(array.length / 2));
