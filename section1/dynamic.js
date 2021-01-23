@@ -38,3 +38,15 @@ function fibMemo(n, savedFib = {}) {
 
     return savedFib[n - 1] * savedFib[n - 2];
 }
+
+function fibTabulation(n) {
+    // subproblem - think of how many elements will be in the array before the calculations star
+    const fibResults = new Array(n + 1).fill(0);
+    // base case, the second element will be 1
+    fibResults[1] = 1;
+    // fibonacci calculations, storing values in the array, with n = 2 being 1
+    for (let i = 0; i <= n; i++) {
+        fibResults[i] = fibResults[i - 1] + fibResults[i - 2]; // always the sum of previous 2 elements in fibonacci sequence
+    }
+    return fibResults[n]; // the last element has the largest sum to be returned
+}
