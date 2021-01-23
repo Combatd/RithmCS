@@ -97,15 +97,38 @@ function search(numbers, valueToFind) {
     // return -1;
 }
 
-console.log(search([1,2,3,4,5], 5)); // 4
-console.log(search([1,2,3,4,5], 15)); // -1
+// console.log(search([1,2,3,4,5], 5)); // 4
+// console.log(search([1,2,3,4,5], 15)); // -1
 
 /*
 binarySearch - divide and conquer algorithm
 */
 
-function binarySearch(numbers, valueToFind) {
+function binarySearch(numbers, valueToFind, start = 0, end = numbers.length - 1) {
+//     var searchValue = 5 
+    if (start > end) return -1; 
 
+//     index = midpoint of current array
+    let index = Math.floor(start + end / 2)
+//     if searchValue == value at index
+    if (valueToFind === numbers[index]){
+//    return index
+        return index;
+    }
+//     if searchValue > value at index
+    if (valueToFind > numbers[index]) {
+        // do binary search of upper half of array
+        return binarySearch(numbers, valueToFind, index, end);
+        
+    }
+
+//  if searchValue < value at index
+    if (valueToFind < numbers[index]) {
+        // do binary search of lower half of array
+         return binarySearch(numbers, valueToFind, start, index + 1);
+    }
+
+    return -1 // element was not found
 }
 
 console.log(binarySearch([1,2,3,4,5], 5)); // 4
@@ -132,7 +155,7 @@ let obj = {
     }
 }
 
-stringifyNumbers()
+// stringifyNumbers()
 /*/
 {
     num: "1",
