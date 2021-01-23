@@ -99,3 +99,50 @@ function search(numbers, valueToFind) {
 
 console.log(search([1,2,3,4,5], 5)); // 4
 console.log(search([1,2,3,4,5], 15)); // -1
+
+/*
+binarySearch - divide and conquer algorithm
+*/
+
+function binarySearch(numbers, valueToFind) {
+
+}
+
+console.log(binarySearch([1,2,3,4,5], 5)); // 4
+console.log(binarySearch([1,2,3,4,5], 15)); // -1
+
+/*
+Write a function called stringifyNumbers which takes in an object 
+and finds all of the values which are numbers and converts them to strings. 
+*/
+
+function stringifyNumbers(object) {
+    
+}
+
+let obj = {
+    num: 1,
+    test: [],
+    data: {
+        val: 4,
+        info: {
+            isRight: true,
+            random: 66
+        }
+    }
+}
+
+stringifyNumbers()
+/*/
+{
+    num: "1",
+    test: [],
+    data: {
+        val: "4",
+        info: {
+            isRight: true,
+            random: "66"
+        }
+    }
+}
+/*/
