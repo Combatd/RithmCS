@@ -49,3 +49,53 @@ let bigObj = {
   };
 console.log(contains(bigObj, 44)) // true
 console.log(contains(bigObj, "foo")) // false
+
+/*
+You need to design a recursive function called replicate which will receive arguments times and number.
+
+The function should return an array containing repetitions of the number argument. 
+For instance, replicate(3, 5) should return [5,5,5]. 
+If the times argument is negative, return an empty array.
+*/
+
+function replicate(times, number) {
+    // base case will get an empty array to concat
+    if (times <= 0) return [];
+    // recursive invocation will concatenate to an array
+    return [number].concat(replicate(times - 1, number));
+}
+
+console.log(replicate(3, 5)); // [5, 5, 5]
+
+/*
+Write a function called search that finds a value in an array and 
+returns the index where the value is at. 
+If the value is not found, the function should return negative 1.
+*/
+
+// problem is unfinished
+function search(numbers, valueToFind) {
+    // base case - numbers only has one element left to check
+    if (numbers.length === 1) {
+        if(numbers[0] === valueToFind)  {
+            return numbers[0];
+        } else {
+            return -1;
+        } 
+    }
+    
+    if (numbers[-1] === valueToFind) {
+        return numbers[-1];
+        
+    } 
+        numbers.pop(); // remove element from top of the stack/end of array
+;       search(numbers, valueToFind); // recursion
+
+    // recursion invocation - we will check elements at the top of the stack for matching value
+
+    
+    // return -1;
+}
+
+console.log(search([1,2,3,4,5], 5)); // 4
+console.log(search([1,2,3,4,5], 15)); // -1
