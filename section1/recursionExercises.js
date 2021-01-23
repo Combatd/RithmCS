@@ -89,7 +89,7 @@ function search(numbers, valueToFind) {
         
     } 
         numbers.pop(); // remove element from top of the stack/end of array
-;       search(numbers, valueToFind); // recursion
+        search(numbers, valueToFind); // recursion
 
     // recursion invocation - we will check elements at the top of the stack for matching value
 
