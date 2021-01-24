@@ -40,7 +40,6 @@ function linearSearchRecursive(theArr, searchValue) {
     }
     // check the element at the top of the stack (end of array)
     if (theArr[theArr.length - 1] === searchValue) { 
-        console.log("Top of Stack Return")
         return theArr.length - 1
     } else {
         // remove the element at top of stack if it doesn't exist
@@ -51,8 +50,30 @@ function linearSearchRecursive(theArr, searchValue) {
 }
 
 
-console.log(linearSearchRecursive([1,2,3,4,5], 5)); // 4
-console.log(linearSearchRecursive([1,2,3,4,5], 15)); // -1
+// console.log(linearSearchRecursive([1,2,3,4,5], 5)); // 4
+// console.log(linearSearchRecursive([1,2,3,4,5], 15)); // -1
+
+function binarySearch(numbers, valueToFind, start = 0, end = numbers.length - 1) {
+    let midPoint;
+
+    while (start <= end) {
+        midPoint = Math.floor( (start + end) / 2);
+        
+        if (valueToFind === numbers[midPoint]) {
+            console.log('value was found');
+            return midPoint;
+        } else if (valueToFind > numbers[midPoint]) {
+            start = midPoint + 1; // skip left side
+        } else {
+            end = midPoint - 1; // skip right side
+        }
+    }
+    // valueToFind not found, so return -1
+    return -1;
+}
+
+console.log(binarySearch([1,2,3,4,5], 5)); // 4
+console.log(binarySearch([1,2,3,4,5], 15)); // -1
 
 function binarySearchRecursive(numbers, valueToFind, start = 0, end = numbers.length - 1) {
         // var searchValue = 5 
@@ -75,7 +96,7 @@ function binarySearchRecursive(numbers, valueToFind, start = 0, end = numbers.le
              return binarySearch(numbers, valueToFind, start, index + 1);
         }
         return -1 // element was not found
-    }
+}
     
-    console.log(binarySearchRecursive([1,2,3,4,5], 5)); // 4
-    console.log(binarySearchRecursive([1,2,3,4,5], 15)); // -1
+// console.log(binarySearchRecursive([1,2,3,4,5], 5)); // 4
+// console.log(binarySearchRecursive([1,2,3,4,5], 15)); // -1
