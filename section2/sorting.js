@@ -53,12 +53,12 @@ function bubbleSort(arr) {
 // console.log(bubbleSort(sortedNegative));
 
 /*
-#selectionSort
+#insertionnSort
 
-Implement selection sort. Your function should accept an array and return an array of sorted values.
+Implement insertion sort. Your function should accept an array and return an array of sorted values.
 */
 
-function selectionSort(arr) {
+function insertionSort(arr) {
     let copyArr = [...arr]; // functional programming retains original state
     let currentIndex = 1; // Start by picking the second element in the array (we will assume the first element is the start of the "sorted" portion)
 
@@ -78,7 +78,7 @@ function selectionSort(arr) {
     return copyArr;
 }
 
-console.log(selectionSort(unsorted));
-console.log(selectionSort(sorted));
-console.log(selectionSort(unsortedNegative));
-console.log(selectionSort(sortedNegative));
+console.log(insertionSort(unsorted));
+console.log(insertionSort(sorted));
+console.log(insertionSort(unsortedNegative));
+console.log(insertionSort(sortedNegative));
