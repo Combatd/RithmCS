@@ -113,7 +113,7 @@ It should return true if the node is updated successfully, or false if an invali
 
 SinglyLinkedList.prototype.set = function(val, index) {
     // find a node at the given index of the SinglyLinkedList
-    const foundNode = this.get(index);
+    const foundNode = this._get(index);
 
     // make sure the foundNode actually exists
     if (foundNode !== null) {
@@ -129,6 +129,21 @@ SinglyLinkedList.prototype.set = function(val, index) {
 This internal/helper function should find a node at a specified index in a SinglyLinkedList. 
 It should return the found node.
 */
+
+SinglyLinkedList.prototype._get = function(index) {
+    // make sure the index is a valid index within the range of the SinglyLinkedList
+    if(index < 0 || index > SinglyLinkedList.length) { return null; }
+
+    // O(n) lookup from start to finish until we retrieve the node
+    let counter = 0; // iterator
+    let tempNode = this.head; // start at the beginning of the SinglyLinkedList
+    while (counter < index) {
+        tempNode = tempNode.next; // reassign to the next node each time
+        counter += 1; 
+    }
+
+    return tempNode // return the node after the O(n) search
+}
 
 /*
 #_insert
