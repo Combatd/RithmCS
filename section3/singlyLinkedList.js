@@ -45,6 +45,25 @@ This function should remove a node at the end of the SinglyLinkedList.
 It should return the node removed.
 */
 
+SinglyLinkedList.prototype.pop = function() {
+    let node = this.head;
+    let previous = this.head;
+    let returnNode = this.tail;
+
+    while (node) {
+        // check if the next node after the head is the tail
+        if (node.next === this.tail) {
+            previous = node; // head takes the place of this node
+            this.tail = previous; // the old tail is the previous node
+            returnNode = node.next; // return this at the end
+            node.next = null; // there is no longer a next node due to pop
+        }
+        node = node.next; // now this node is the next node
+    }
+
+    return returnNode; // return the pop node
+}
+
 
 /*
 unshift
