@@ -71,7 +71,7 @@ This function should add a node to the beginning of the SinglyLinkedList.
 It should return the list so that the method can be chained.
 */
 
-SinglyLinkedList.prototype.unshift(node) {
+SinglyLinkedList.prototype.unshift = function(node) {
     // track the current head
     let currentHead = this.head;
     // incremeent the length of the LinkedLlist
@@ -84,7 +84,7 @@ SinglyLinkedList.prototype.unshift(node) {
         node.next = currentHead; // becomes the head of this SinglyLinkedList instance
         this.head = node;
     }
-    
+
     // return the list so the method can be chained
     return this; 
 }
@@ -95,6 +95,15 @@ This function should remove a node at the beginning of the SinglyLinkedList.
 It should return the node removed.
 */
 
+SinglyLinkedList.prototype.shift = function() {
+    // check if a head (first node) exists
+    if (!this.head) { return null; }
+    // the returned node is going to be this.head (first node)
+    let returnNode = this.head;
+    // set the second node to be the new head
+    this.head = returnNode.next; 
+    return returnNode; // return the head we grabbed earlier
+}
 
 /*
 #set
