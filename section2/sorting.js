@@ -159,7 +159,7 @@ function mergeSortHelper(low, high) {
     return returnedArr;
 }
 
-console.log(mergeSort(sorted));
-console.log(mergeSort(unsorted));
-console.log(mergeSort(unsortedNegative));
-console.log(mergeSort(sortedNegative));
+// console.log(mergeSort(sorted));
+// console.log(mergeSort(unsorted));
+// console.log(mergeSort(unsortedNegative));
+// console.log(mergeSort(sortedNegative));
