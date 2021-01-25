@@ -71,6 +71,23 @@ This function should add a node to the beginning of the SinglyLinkedList.
 It should return the list so that the method can be chained.
 */
 
+SinglyLinkedList.prototype.unshift(node) {
+    // track the current head
+    let currentHead = this.head;
+    // incremeent the length of the LinkedLlist
+    this.length += 1;
+    // if the LinkedList has no nodes yet, the unshifted node is both head and tail
+    if (!this.head) {
+        this.head = node;
+        this.tail = node;
+    } else {
+        node.next = currentHead; // becomes the head of this SinglyLinkedList instance
+        this.head = node;
+    }
+    
+    // return the list so the method can be chained
+    return this; 
+}
 
 /*
 #shift
