@@ -119,3 +119,47 @@ function selectionSort(arr) {
 // console.log(selectionSort(sorted));
 // console.log(selectionSort(unsortedNegative));
 // console.log(selectionSort(sortedNegative));
+
+/*
+#mergeSort
+Implement merge sort. 
+Your function should accept an array and return an array of sorted values. 
+You can solve this iteratively or recursively.
+*/
+
+function mergeSort(arr) {
+    if(arr.length < 2) return arr;
+
+    const copyArr = [...arr]; // functional programming does not change original state
+    // Break up the array into halves until you can compare one value with another
+    let midPoint = Math.floor(copyArr.length / 2);
+    let low = copyArr.slice(0, midPoint);
+    let high = copyArr.slice(midPoint);
+    // Once you have smaller sorted arrays, merge those arrays with other sorted pairs until you are back at the full length of the array
+    // Once the array has been merged back together, return the merged (and sorted!) array
+    return mergeSortHelper(mergeSort(low), mergeSort(high));
+}
+
+function mergeSortHelper(low, high) {
+    const mergedArr = [];
+
+    while (low.length > 0 && high.length > 0) {
+        if (low[0] <= high[0]) {
+            mergedArr.push(low.shift()); // take from front of the low array
+        } else {
+            // the high array is actually the low
+            mergedArr.push(high.shift());
+        }
+        // ternary version is hard to read
+        // let nextEle = (left[0] < right[0]) ? left.shift() : right.shift();
+        // merged.push(nextEle);
+    }
+    // concatenate the two arrays together
+    const returnedArr = [...mergedArr, ...low, ...high];
+    return returnedArr;
+}
+
+console.log(mergeSort(sorted));
+console.log(mergeSort(unsorted));
+console.log(mergeSort(unsortedNegative));
+console.log(mergeSort(sortedNegative));
