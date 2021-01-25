@@ -111,6 +111,18 @@ This function should update the value of a node at a given index of the SinglyLi
 It should return true if the node is updated successfully, or false if an invalid index is passed in.
 */
 
+SinglyLinkedList.prototype.set = function(val, index) {
+    // find a node at the given index of the SinglyLinkedList
+    const foundNode = this.get(index);
+
+    // make sure the foundNode actually exists
+    if (foundNode !== null) {
+        foundNode.val = val; // set the new val to the foundNode
+        return true; // the set operation worked
+    } else {
+        return false; // the set operation failed
+    }
+}
 
 /*
 #_get
