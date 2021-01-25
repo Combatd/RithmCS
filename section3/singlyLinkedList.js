@@ -21,8 +21,23 @@ function SinglyLinkedList(){
 #push
 This function should add a node to the end of the SinglyLinkedList. 
 It should return the list so that the method can be chained.
-/*
+*/
 
+SinglyLinkedList.prototype.push = function(node) {
+    // increment length by 1
+    this.length += 1;
+    // if the head is falsey, the node is both the head and tail
+    if(!this.head) {
+        this.head = node;
+        this.tail = node;
+    } else { // else, the node is the next of the previous tail and is the tail
+        this.tail.next = node;
+        this.tail = node;
+    }
+
+    // return the list so that the method can be chained
+    return this;
+}
 
 /*
 #pop
