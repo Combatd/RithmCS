@@ -163,3 +163,41 @@ function mergeSortHelper(low, high) {
 // console.log(mergeSort(unsorted));
 // console.log(mergeSort(unsortedNegative));
 // console.log(mergeSort(sortedNegative));
+
+/*
+#quickSort
+
+Your function should accept an array and return an array of sorted values. 
+You can solve this iteratively or recursively.
+NOT FINISHED
+*/
+
+function quickSort(arr) {
+    if (arr.length < 2) {
+        return arr;
+    }
+    const copyArr = arr.slice(0);
+// Pick an element in the array and designate it as the "pivot". While there are quite a few options for choosing the pivot. We'll make things simple to start, and will choose the pivot as the first element. This is not an ideal choice, but it makes the algorithm easier to understand for now.
+    let pivot = copyArr[0];
+    let pivotIndex = 0;
+// Next, compare every other element in the array to the pivot.
+// If it's less than the pivot value, move it to the left of the pivot.
+// If it's greater, move it to the right.
+    for (let i = 0; i < arr.length; i++) {
+        if (pivot < copyArr[i]) {
+            let tempValue = copyArr[pivotIndex + 1];
+            copyArr[pivotIndex + 1] = copyArr[i];
+            copyArr[i] = tempValue;
+        }
+    }
+// Once you have finished comparing, the pivot will be in the right place
+// Next, recursively call quicksort again with the left and right halves from the pivot until the array is sorted
+const left = copyArr.slice(0, pivotIndex);
+const right = copyArr.slice(pivotIndex);
+return left + right;
+}
+
+console.log(quickSort(sorted));
+console.log(quickSort(unsorted));
+console.log(quickSort(unsortedNegative));
+console.log(quickSort(sortedNegative));
