@@ -151,6 +151,28 @@ This internal/helper function should insert a node at a specified index in a Sin
 It should return the new length of the SinglyLinkedList.
 */
 
+SinglyLinkedList.prototype.insert = function(node, index) {
+    // make sure the index is within the range of the SinglyLinkedList
+    if (index < 0 || index > this.length) { return false; }
+    // we can push to the end of the list if the index is equal to the length
+    if (index === this.length) {
+        this.push(node);
+        return true;
+    }
+
+    // we can unshift to the start of the list if the index is 0
+    if (index === 0) {
+        this.unshift(node);
+        return true;
+    } else {
+        const previousNode = this._get(index - 1);
+        node.next = previousNode.next;
+        previousNode.next = node; // the node is after the previousNode
+        this.length += 1; // increment the length
+        return true;
+    }
+
+}
 
 /*
 #remove
