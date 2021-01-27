@@ -220,3 +220,7 @@ SinglyLinkedList.prototype.reverse = function() {
 
     return this; // return the reversed SinglyLinkedList
 }
+
+module.exports = {
+    SinglyLinkedList
+}
