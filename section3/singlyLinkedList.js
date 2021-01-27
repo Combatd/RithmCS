@@ -201,3 +201,22 @@ SinglyLinkedList.prototype.remove = function(index) {
 This function should reverse all of the nodes in a SinglyLinkedList. 
 It should return the reversed SinglyLinkedList.
 */
+
+SinglyLinkedList.prototype.reverse = function() {
+    // make sure there is a head node
+    if (!this.head) { return null; }
+
+    let node = this.head;
+    this.head = this.tail; // head becomes the tail
+    let next;
+    let previousNode = node;
+    // Accessing a LinkedList is in O(n) time
+    for (let i = 0; i < this.length; i++) {
+        next = node.next;
+        node.next = previousNode; // reassigning properties for reversa
+        previousNode = node;
+        node = next;
+    }
+
+    return this; // return the reversed SinglyLinkedList
+}
