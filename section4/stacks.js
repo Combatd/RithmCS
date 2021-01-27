@@ -21,5 +21,10 @@ function Stack() {
 }
 
 Stack.prototype.push = function(val) {
-    this.data.push(val) // add a value to the top of the stack
+    this.data.push(val); // add a value to the top of the stack
+    return this.data.length;
+}
+
+Stack.prototype.pop = function() {
+    return this.data.pop();
 }
