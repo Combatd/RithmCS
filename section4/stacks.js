@@ -38,3 +38,8 @@ Stack.prototype.print = function() {
         console.log(this.data[i]);
     }
 }
+
+/*
+Part II
+Given a doubly linked list, implement a stack
+*/
