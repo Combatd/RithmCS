@@ -26,5 +26,9 @@ Stack.prototype.push = function(val) {
 }
 
 Stack.prototype.pop = function() {
-    return this.data.pop();
+    return this.data.pop(); // remove and return value at the top of the stack
+}
+
+Stack.prototype.peek = function() {
+    return this.data[this.data.length - 1]; // return value at the top of the stack
 }
