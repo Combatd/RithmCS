@@ -180,6 +180,21 @@ This function should remove a node at a specified index in a SinglyLinkedList.
 It should return the removed node.
 */
 
+SinglyLinkedList.prototype.remove = function(index) {
+    // make sure the index is within the range of the SinglyLinkedList
+    if (index < 0 || index >= this.length) { return undefined; }
+    // we can use #shift to remove the node at the start (this.head)
+    if (index === 0) { return this.shift(); }
+    // we can use #pop to remove the node at the end (this.tail)
+    if (index === this.length - 1) {
+        return this.pop(); // remove node at last index
+    }
+    this.length -= 1; // the length goes down by 1
+    let previousNode = this._get(index - 1); // track the previous node in the SinglyLinkedList
+    const removedNode = previousNode.next; // target the last node in the SinglyLinkedList
+    previousNode.next = previousNode.next.next; // set the next property on the previous node
+    return removedNode;
+}
 
 /*
 #reverse
