@@ -32,3 +32,9 @@ Stack.prototype.pop = function() {
 Stack.prototype.peek = function() {
     return this.data[this.data.length - 1]; // return value at the top of the stack
 }
+
+Stack.prototype.print = function() {
+    for(let i = 0; i < this.data.length; i++) {
+        console.log(this.data[i]);
+    }
+}
