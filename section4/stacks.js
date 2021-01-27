@@ -19,3 +19,7 @@ This function console.log's all the values in the stack.
 function Stack() {
     this.data = []; // stack
 }
+
+Stack.prototype.push = function(val) {
+    this.data.push(val) // add a value to the top of the stack
+}
