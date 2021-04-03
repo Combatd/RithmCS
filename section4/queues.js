@@ -33,6 +33,32 @@ Queue.prototype.enqueue = function(val) {
     } else {
         this.last = this.storage[this.size - 1]; // last Node in Queue
     }
+
+    return this.size;
+}
+
+
+/*
+#dequeue
+This function removes the value at the beginning of the queue.
+This should be an O(1) operation and return the size of the queue.
+*/
+
+Queue.prototype.dequeue = function() {
+    if (this.size < 1) {
+        return this.size;
+    } else if (this.size === 1) {
+        this.storage.shift();
+        this.first = null;
+        this.last = null;
+    } else {
+        this.storage.shift();
+        this.size -= 1;
+        this.first = this.storage[0];
+        this.last = this.storage[this.size - 1];
+    }
+
+    return this.size;
 }
 
 let q = new Queue();;
@@ -41,4 +67,7 @@ q.enqueue(5);
 q.enqueue(10);
 q.enqueue(15);
 
+// q.dequeue();
+
 console.log('The Queue named q: ', q);
+
