@@ -75,6 +75,23 @@ Queue.prototype.peek = function() {
     }
 }
 
+/*
+#print
+This function console.logs all the values in the queue.
+*/
+
+Queue.prototype.print = function() {
+    if(this.size < 1) {
+        console.log("Empty Queue");
+    } else {
+        let queueValuesStr = '';
+        this.storage.map((val) => {
+            return queueValuesStr = queueValuesStr + val.toString() + ' ';
+        });
+        console.log(queueValuesStr);
+    }
+}
+
 
 let q = new Queue();;
 
@@ -86,3 +103,4 @@ q.enqueue(15);
 
 console.log('The Queue named q: ', q);
 console.log(`The first element of q is ${q.peek()}`);
+q.print()
