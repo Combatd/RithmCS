@@ -61,6 +61,21 @@ Queue.prototype.dequeue = function() {
     return this.size;
 }
 
+
+/*
+#peek
+This function returns the first value in the queue.
+*/
+
+Queue.prototype.peek = function() {
+    if(this.storage.size < 1) {
+        return -1;
+    } else {
+        return this.storage[0];
+    }
+}
+
+
 let q = new Queue();;
 
 q.enqueue(5);
@@ -70,4 +85,4 @@ q.enqueue(15);
 // q.dequeue();
 
 console.log('The Queue named q: ', q);
-
+console.log(`The first element of q is ${q.peek()}`);
