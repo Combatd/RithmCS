@@ -1,5 +1,16 @@
 # RithmCS
 
+Computer Science Applied to JavaScript using either ES5 or ES6 syntax.
+
+* ES5
+    * Constructor Functions
+    * Prototype Functions and Inheritance (instance method)
+    * ```Class.method``` class method always available ```Array.map```
+
+* ES6
+    * Classes with Constructors
+    * Member functions invoked on instances ```Person1.name()```
+    * Static Functions are always available ```Array.map```
 ## 1 Complexity Analysis and Recursion
 * Big O Notation
 * Big O Exercises
