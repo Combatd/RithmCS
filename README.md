@@ -11,6 +11,7 @@ Computer Science Applied to JavaScript using either ES5 or ES6 syntax.
     * Classes with Constructors
     * Member functions invoked on instances ```Person1.name()```
     * Static Functions are always available ```Array.map```
+    
 ## 1 Complexity Analysis and Recursion
 * Big O Notation
 * Big O Exercises
