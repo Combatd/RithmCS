@@ -5,5 +5,16 @@ function Node(val){
 }
 
 function BinarySearchTree(){
-    this.root = null;
+    this._root = null;
+}
+
+/*
+#insertIteratively
+This function should insert a node in a binary tree. This should be solved using iteration.
+*/
+
+BinarySearchTree.prototype.insertIteratively = function(node) {
+    if (this._root === null) {
+        this._root = node;
+    }
 }
